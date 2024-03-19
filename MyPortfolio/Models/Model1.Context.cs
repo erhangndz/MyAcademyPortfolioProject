@@ -38,5 +38,6 @@ namespace MyPortfolio.Models
         public virtual DbSet<TblSocialMedias> TblSocialMedias { get; set; }
         public virtual DbSet<TblTeams> TblTeams { get; set; }
         public virtual DbSet<TblTestimonials> TblTestimonials { get; set; }
+        public virtual DbSet<TblTest> TblTest { get; set; }
     }
 }

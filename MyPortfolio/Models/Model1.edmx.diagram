@@ -19,6 +19,7 @@
         <EntityTypeShape EntityType="MyAcademyPortfolioProjectModel.TblTeams" Width="1.5" PointX="6.75" PointY="7.75" IsExpanded="true" />
         <EntityTypeShape EntityType="MyAcademyPortfolioProjectModel.TblTestimonials" Width="1.5" PointX="8.75" PointY="3.75" IsExpanded="true" />
         <AssociationConnector Association="MyAcademyPortfolioProjectModel.FK_TblProjects_TblCategories" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="MyAcademyPortfolioProjectModel.TblTest" Width="1.5" PointX="9.375" PointY="7.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
