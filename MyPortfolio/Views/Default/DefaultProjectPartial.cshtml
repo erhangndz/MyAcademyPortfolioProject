@@ -1,0 +1,43 @@
+﻿@model List<MyPortfolio.Models.TblProjects>
+
+
+<div class="portfolio" id="portfolio">
+    <div class="container">
+        <div class="section-header text-center wow zoomIn" data-wow-delay="0.1s">
+            <p>Projelerim</p>
+            <h2>Geliştirdiğim Projelere Göz Atın</h2>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <ul id="portfolio-filter">
+                    <li data-filter="*" class="filter-active">Tümü</li>
+                    @foreach (var item in ViewBag.categories)
+                    {
+
+                    <li data-filter=".@item.CategoryId">@item.CategoryName</li>
+                    }
+                </ul>
+            </div>
+        </div>
+        <div class="row portfolio-container">
+            @foreach (var item in Model)
+            {
+
+
+            <div class="col-lg-4 col-md-6 col-sm-12 portfolio-item @item.CategoryId wow fadeInUp" data-wow-delay="0.0s">
+                <div class="portfolio-wrap">
+                    <div class="portfolio-img">
+                        <img src="@item.ImageUrl" alt="Image">
+                    </div>
+                    <div class="portfolio-text">
+                        <h3>@item.ProjectName</h3>
+                        <a class="btn" href="@item.ImageUrl" data-lightbox="portfolio">+</a>
+                        <a class="btn" href="@item.GithubUrl" target="_blank"><i class="fab fa-github"></i> </a>
+                    </div>
+                </div>
+            </div>
+            }
+            
+        </div>
+    </div>
+</div>

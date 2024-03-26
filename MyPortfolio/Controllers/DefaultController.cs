@@ -31,5 +31,41 @@ namespace MyPortfolio.Controllers
 
             return PartialView(values);
         }
+
+        [HttpGet]
+        public PartialViewResult SendMessage()
+        {
+            return PartialView();
+        }
+
+        [HttpPost]
+        public ActionResult SendMessage(TblMessages messages)
+        {
+            db.TblMessages.Add(messages);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
+        public PartialViewResult DefaultServicePartial()
+        {
+            var values = db.TblServices.Where(x=>x.Status==true).ToList();
+            return PartialView(values);
+        }
+
+        public PartialViewResult DefaultSkillPartial()
+        {
+            var values = db.TblSkills.ToList();
+            return PartialView(values);
+        }
+
+        public PartialViewResult DefaultProjectPartial()
+        {
+            var categories = db.TblCategories.ToList();
+            ViewBag.categories= categories;
+
+            var values = db.TblProjects.ToList();
+            return PartialView(values);
+        }
+
     }
 }

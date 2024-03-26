@@ -1,0 +1,32 @@
+﻿@model List<MyPortfolio.Models.TblServices>
+
+
+<div class="service" id="service">
+    <div class="container">
+        <div class="section-header text-center wow zoomIn" data-wow-delay="0.1s">
+            <p>Sizin için ne yapabilirim</p>
+            <h2>Kurumsal Hizmetler</h2>
+        </div>
+        <div class="row">
+            @foreach (var item in Model)
+            {
+
+
+            <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.0s">
+                <div class="service-item">
+                    <div class="service-icon">
+                        <i class="@item.Icon"></i>
+                    </div>
+                    <div class="service-text">
+                        <h3>@item.Title</h3>
+                        <p>
+                            @item.Description
+                        </p>
+                    </div>
+                </div>
+            </div>
+            }
+           
+        </div>
+    </div>
+</div>

@@ -1,0 +1,19 @@
+﻿
+@model List<MyPortfolio.Models.TblSkills>
+
+<div class="skills">
+
+    @foreach (var item in Model)
+    {
+
+
+    <div class="skill-name">
+        <p>@item.SkillName</p><p>@item.Value%</p>
+    </div>
+    <div class="progress">
+        <div class="progress-bar" role="progressbar" aria-valuenow="@item.Value" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+    }
+
+  
+</div>
