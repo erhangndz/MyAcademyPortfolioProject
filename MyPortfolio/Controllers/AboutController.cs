@@ -9,7 +9,7 @@ using System.Web.Mvc;
 namespace MyPortfolio.Controllers
 {
 
-   
+    [SessionTimeOut]
     public class AboutController : Controller
     {
         MyAcademyPortfolioProjectEntities db = new MyAcademyPortfolioProjectEntities();

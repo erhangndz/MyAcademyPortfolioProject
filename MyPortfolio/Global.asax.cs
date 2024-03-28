@@ -14,7 +14,7 @@ namespace MyPortfolio
         protected void Application_Start()
         {
             GlobalFilters.Filters.Add(new AuthorizeAttribute());
-            GlobalFilters.Filters.Add(new SessionTimeOutAttribute());
+           
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);

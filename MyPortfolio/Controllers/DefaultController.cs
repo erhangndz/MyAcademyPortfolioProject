@@ -69,5 +69,10 @@ namespace MyPortfolio.Controllers
             return PartialView(values);
         }
 
+        public ActionResult Test()
+        {
+            return View();
+        }
+
     }
 }
