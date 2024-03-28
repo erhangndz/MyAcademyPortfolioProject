@@ -7,6 +7,8 @@ using System.Web.Mvc;
 
 namespace MyPortfolio.Controllers
 {
+
+    [AllowAnonymous]
     public class DefaultController : Controller
     {
         // GET: Default

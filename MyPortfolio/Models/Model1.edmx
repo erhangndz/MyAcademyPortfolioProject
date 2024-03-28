@@ -24,6 +24,14 @@
           <Property Name="Title" Type="nvarchar" MaxLength="50" />
           <Property Name="Description" Type="nvarchar" MaxLength="250" />
         </EntityType>
+        <EntityType Name="TblAdmins">
+          <Key>
+            <PropertyRef Name="AdminId" />
+          </Key>
+          <Property Name="AdminId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Password" Type="nvarchar" MaxLength="50" />
+        </EntityType>
         <EntityType Name="TblCategories">
           <Key>
             <PropertyRef Name="CategoryId" />
@@ -157,6 +165,7 @@
         <EntityContainer Name="MyAcademyPortfolioProjectModelStoreContainer">
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TblAbouts" EntityType="Self.TblAbouts" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblAdmins" EntityType="Self.TblAdmins" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TblCategories" EntityType="Self.TblCategories" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TblContacts" EntityType="Self.TblContacts" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TblExperiences" EntityType="Self.TblExperiences" Schema="dbo" store:Type="Tables" />
@@ -341,6 +350,7 @@
             <End Role="TblProjects" EntitySet="TblProjects" />
           </AssociationSet>
           <EntitySet Name="TblTest" EntityType="MyAcademyPortfolioProjectModel.TblTest" />
+          <EntitySet Name="TblAdmins" EntityType="MyAcademyPortfolioProjectModel.TblAdmins" />
         </EntityContainer>
         <EntityType Name="TblTest">
           <Key>
@@ -348,6 +358,14 @@
           </Key>
           <Property Name="TestId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TblAdmins">
+          <Key>
+            <PropertyRef Name="AdminId" />
+          </Key>
+          <Property Name="AdminId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -503,6 +521,15 @@
               <MappingFragment StoreEntitySet="TblTest">
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="TestId" ColumnName="TestId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblAdmins">
+            <EntityTypeMapping TypeName="MyAcademyPortfolioProjectModel.TblAdmins">
+              <MappingFragment StoreEntitySet="TblAdmins">
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="AdminId" ColumnName="AdminId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
